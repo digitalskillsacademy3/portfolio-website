@@ -218,12 +218,18 @@ header .navbar ul li a:hover {
   margin-left: 6rem;
   border-radius: 50%;
   margin-right: -40px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.6); /* Modern shadow effect */
   cursor: pointer;
+  transition: all 0.3s ease;
+  background-color: transparent;
+  border: 5px solid rgba(55, 255, 255, 0.6); /* Soft circular border */
 }
+
 .home .image img:hover {
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.7); /* Glowing shadow effect */
+  transform: scale(1.1);
 }
+
 .home .content h2 {
   font-size: 5rem;
   font-weight: 800;
@@ -377,11 +383,14 @@ header .navbar ul li a:hover {
   height: 500px;
   border-radius: 50%;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.6);
+  border: 5px solid rgba(55, 255, 255, 0.6); /* Soft circular border */
   transition: 0.3s;
   cursor: pointer;
 }
 .about .row .image img:hover {
   mix-blend-mode: normal;
+  transform: scale(1.1);
+
 }
 .about .row .content {
   flex: 1 1 45rem;
