@@ -16,9 +16,74 @@ html {
   overflow-x: hidden;
   scroll-behavior: smooth;
 }
+
+
 body {
   background: #cbdcf7;
   font-family: "Poppins", sans-serif;
+}
+
+/* Container for the toggle switch */
+.theme-toggle-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+}
+
+/* Hide the default checkbox */
+.theme-toggle-checkbox {
+  display: none;
+}
+
+/* Label styles for the toggle */
+.theme-toggle-label {
+  width: 60px;
+  height: 30px;
+  background-color: #000;
+  border-radius: 50px;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Sun and Moon icons */
+.sun-icon, .moon-icon {
+  font-size: 18px;
+  color: #fff;
+  position: absolute;
+  top: 5px;
+  transition: transform 0.3s ease;
+}
+
+/* Position of Sun and Moon Icons */
+.sun-icon {
+  left: 5px;
+}
+
+.moon-icon {
+  right: 5px;
+}
+
+/* When the checkbox is checked (dark theme) */
+.theme-toggle-checkbox:checked + .theme-toggle-label {
+  background-color: #333;
+}
+
+/* Move the moon icon to the right */
+.theme-toggle-checkbox:checked + .theme-toggle-label .sun-icon {
+  transform: translateX(100%);
+  opacity: 0;
+}
+
+/* Move the sun icon to the left */
+.theme-toggle-checkbox:checked + .theme-toggle-label .moon-icon {
+  transform: translateX(-100%);
+  opacity: 1;
 }
 
 *::selection {
@@ -176,6 +241,8 @@ header .navbar ul li a:hover {
     right: 0;
   }
 }
+
+
 /* hamburger icon ends */
 
 /* hero section starts*/
@@ -383,14 +450,11 @@ header .navbar ul li a:hover {
   height: 500px;
   border-radius: 50%;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.6);
-  border: 5px solid rgba(55, 255, 255, 0.6); /* Soft circular border */
   transition: 0.3s;
   cursor: pointer;
 }
 .about .row .image img:hover {
   mix-blend-mode: normal;
-  transform: scale(1.1);
-
 }
 .about .row .content {
   flex: 1 1 45rem;
@@ -1110,6 +1174,92 @@ form .button-area {
 /* contact section media queries ends */
 /* contact section ends */
 
+#courses {
+  padding: 40px 10px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+/* Layout Wrapper */
+.courses-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.course-side {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 45%;
+}
+
+.course-box {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: white;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.course-box img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.course-details h3 {
+  font-size: 2.2em;
+  margin: 10px 0;
+}
+
+.course-details p {
+  font-size: 1.5em;
+  margin: 5px 0;
+}
+
+.price {
+  font-weight: bold;
+  color: #fff;
+  background-color: #007bff; /* Blue background for price */
+  padding: 5px 15px;
+  border-radius: 20px;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+/* Center Line */
+.separator {
+  width: 2px;
+  background: #ddd;
+  height: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .courses-wrapper {
+      flex-direction: column;
+  }
+
+  .course-side {
+      width: 100%;
+  }
+
+  .separator {
+      display: none;
+  }
+}
 /* footer section starts */
 .footer {
   min-height: auto;

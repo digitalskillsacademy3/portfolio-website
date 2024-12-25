@@ -1,3 +1,24 @@
+document.getElementById("theme-toggle").addEventListener("change", function () {
+    document.body.classList.toggle("dark-theme", this.checked);
+
+    // Save the theme to localStorage
+    if (this.checked) {
+        localStorage.setItem("theme", "dark");
+    } else {
+        localStorage.setItem("theme", "light");
+    }
+});
+
+// Check if the user has a saved theme preference
+window.addEventListener("load", function () {
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "dark") {
+        document.body.classList.add("dark-theme");
+        document.getElementById("theme-toggle").checked = true;
+    }
+});
+
+
 $(document).ready(function () {
 
     $('#menu').click(function () {
